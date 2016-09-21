@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20160831010915) do
 
   create_table "alunos", force: :cascade do |t|
-    t.integer  "cpf"
+    t.string   "cpf"
     t.string   "name"
     t.string   "email"
     t.integer  "date_of_birth"
