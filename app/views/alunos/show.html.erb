@@ -1,29 +1,30 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <p>
+    <strong>Cpf:</strong>
+    <%= @aluno.cpf %>
+  </p>
 
-<p>
-  <strong>Cpf:</strong>
-  <%= @aluno.cpf %>
-</p>
+  <p>
+    <strong>Nome:</strong>
+    <%= @aluno.name %>
+  </p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @aluno.name %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @aluno.email %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @aluno.email %>
-</p>
+  <p>
+    <strong>Data de Nascimento:</strong>
+    <%= @aluno.date_of_birth %>
+  </p>
 
-<p>
-  <strong>Data de Nascimento:</strong>
-  <%= @aluno.date_of_birth %>
-</p>
+  <p>
+    <strong>Ra:</strong>
+    <%= @aluno.ra %>
+  </p>
 
-<p>
-  <strong>Ra:</strong>
-  <%= @aluno.ra %>
-</p>
-
-<%= link_to 'Editar', edit_aluno_path(@aluno) %> |
-<%= link_to 'Voltar', alunos_path %>
+  <%= link_to 'Editar', edit_aluno_path(@aluno) %> |
+  <%= link_to 'Voltar', alunos_path %>
+</div>
