@@ -28,7 +28,9 @@ class AlunosController < ApplicationController
 
     respond_to do |format|
       if @aluno.save
-        format.html { redirect_to @aluno, notice: 'Aluno foi criado com sucesso.' }
+        user = User.new(email: aluno_params[:email], password: aluno_params[:email])
+        user.save
+        format.html { redirect_to @aluno, notice: "Aluno foi criado com sucesso.CPF é usado para login com senha inicial igual seu email" }
         format.json { render :show, status: :created, location: @aluno }
       else
         format.html { render :new }
@@ -54,6 +56,8 @@ class AlunosController < ApplicationController
   # DELETE /alunos/1
   # DELETE /alunos/1.json
   def destroy
+    user = User.find_by(email: @aluno[:email])
+    user.destroy
     @aluno.destroy
     respond_to do |format|
       format.html { redirect_to alunos_url, notice: 'Aluno foi removido com sucesso.' }
