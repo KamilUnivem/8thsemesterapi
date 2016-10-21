@@ -25,6 +25,6 @@
     <%= @aluno.ra %>
   </p>
 
-  <%= link_to 'Editar', edit_aluno_path(@aluno) %> |
-  <%= link_to 'Voltar', alunos_path %>
+  <%= link_to 'Editar', edit_aluno_path(@aluno), :class => "btn btn-primary" %> |
+  <%= link_to 'Voltar', alunos_path, :class => "btn btn-default"%>
 </div>

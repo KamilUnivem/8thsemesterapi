@@ -30,7 +30,7 @@ class AlunosController < ApplicationController
       if @aluno.save
         user = User.new(email: aluno_params[:email], password: aluno_params[:email])
         user.save
-        format.html { redirect_to @aluno, notice: "Aluno foi criado com sucesso.CPF é usado para login com senha inicial igual seu email" }
+        format.html { redirect_to @aluno, notice: "Aluno foi criado com sucesso.Email é usado para login com senha inicial igual seu email" }
         format.json { render :show, status: :created, location: @aluno }
       else
         format.html { render :new }

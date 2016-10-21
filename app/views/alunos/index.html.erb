@@ -1,8 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="col-sm-8">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Universidade X</a>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
 
-<div class="container">
-  <h1>Alunos</h1>
-      <table>
+  <p id="notice"><%= notice %></p>
+
+  <div class="container-fluid">
+    <h1>Alunos</h1>
+    <div class="table-responsive">
+      <table class="table">
         <thead>
           <tr>
             <th>Cpf</th>
@@ -22,14 +39,20 @@
               <td><%= aluno.email %></td>
               <td><%= aluno.date_of_birth %></td>
               <td><%= aluno.ra %></td>
-              <td><%= link_to 'Mostrar', aluno %></td>
-              <td><%= link_to 'Editar', edit_aluno_path(aluno) %></td>
-              <td><%= link_to 'Apagar', aluno, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+              <div class="container">
+                <div class="btn-group">
+                  <td><%= link_to 'Mostrar', aluno, :type => "button", :class => "btn btn-primary" %></td>
+                  <td><%= link_to 'Editar', edit_aluno_path(aluno), :class => "btn btn-info" %></td>
+                  <td><%= link_to 'Apagar', aluno, method: :delete, data: { confirm: 'Tem certeza?' }, :class => "btn btn-warning" %></td>
+                </div>
+              </div>
             </tr>
           <% end %>
         </tbody>
       </table>
-  <br>
+    <br>
+    </div>
 
-  <%= link_to 'Novo Aluno', new_aluno_path %>
+    <%= link_to 'Novo Aluno', new_aluno_path, :class => "btn btn-success" %>
+  </div>
 </div>
